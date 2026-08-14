@@ -13,7 +13,7 @@ Portfolio
 - Datenbank: keine — Inhalte liegen als JS-Objekte in `src/content/`
 - Auth: keiner
 - Besonderheiten: `@tsparticles/react` + `/slim` für den animierten Hintergrund, `sharp` für die Bildoptimierung im Build
-- Hosting: statisch, Build-Ordner `dist/` wird direkt ausgeliefert
+- Hosting: statisch. `dist/` ist **nicht** im Repo (siehe Baustellen) — Deploy-Weg noch offen
 - Node-Version: nicht festgelegt
 
 ## Befehle
@@ -45,6 +45,7 @@ Es gibt weder `typecheck` noch `test`.
 - **JavaScript statt TypeScript.** Entscheidung für dieses Projekt, nicht für neue: **jedes neue Projekt startet weiter in TypeScript ab der ersten Datei.**
 
 ## Bekannte Baustellen
+- [ ] `dist/` wurde aus der Git-Nachverfolgung entfernt (14.08.2026, Grund: 60-MB-Videodatei im Build löste eine GitHub-Warnung aus). Ein Deploy-Weg ohne versionierten Build-Ordner ist noch offen — z. B. Deploy-Pipeline (GitHub Actions → GitHub Pages/Vercel) statt manuellem `dist`-Push
 - [ ] `scripts/optimize-images.js` löscht mit `fs.unlinkSync` die Originalbilder — und hängt an `npm run build`. Ein versehentlicher Build zerstört Quelldateien unumkehrbar. Entweder Originale behalten oder das Skript aus dem Build-Schritt lösen
 - [ ] `index.html` hat `lang="en"`, muss `lang="de"` sein (DoD 4)
 - [ ] `README.md` ist leer (DoD 9)
