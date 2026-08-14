@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+
+@font-face {
+  font-family: 'Chelsea Market';
+  src: url('./font/Chelsea_Market/ChelseaMarket-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Krub';
+  src: url('./font/Krub/Krub-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer utilities {
+  .font-krub {
+    font-family: 'Krub', sans-serif;
+  }
+  .font-chelsea {
+    font-family: 'Chelsea Market', sans-serif; 
+  }
+}
+
+:root {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+
