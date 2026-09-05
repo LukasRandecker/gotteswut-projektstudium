@@ -69,6 +69,14 @@ Es gibt weder `typecheck` noch `test`.
       **Stand 05.09.2026 gemessen:** in `public/images/` liegen 0 PNG/JPG und 90 `.webp` — das
       Skript ist derzeit ein No-Op, `npm run build` also ungefährlich. Die Falle bleibt aber
       scharf, sobald jemand ein PNG dort ablegt
+- [x] **`lucide-react` fehlte in der `package.json`** und wurde lokal nur deshalb gefunden, weil in
+      `C:\Users\Lukas\node_modules` 491 Pakete liegen — Node sucht Module aufwärts durch alle
+      Elternordner. Der erste Cloudflare-Build ist daran gescheitert
+      (`Rollup failed to resolve import "lucide-react"`). Am 05.09.2026 als echte Abhängigkeit
+      nachgetragen (`^1.41.0`).
+      **Konsequenz für künftige Prüfungen: `npm ci` + `npm run build` auf diesem Rechner beweisen
+      nicht, dass der Build anderswo läuft.** Zusätzlich prüfen, ob jeder bare Import in der
+      `package.json` steht — sonst fällt der nächste Phantom-Import erst beim Deploy auf
 - [ ] `index.html` hat `lang="en"`, muss `lang="de"` sein (DoD 4)
 - [ ] `README.md` ist leer (DoD 9)
 - [ ] Vollständige DoD-Prüfung steht noch aus — bis dahin ist „Portfolio" ein Anspruch, kein Nachweis
@@ -79,8 +87,12 @@ Es gibt weder `typecheck` noch `test`.
 
 ## Zuletzt geprüft
 Stand 05.09.2026 (Deploy-Vorbereitung Cloudflare Pages):
-- `npm ci` + `npm run build`: **läuft durch**, Exit 0, 21,9 s. Ein Vite-Hinweis: der JS-Chunk ist
-  507,9 kB (157,8 kB gzip) und damit über der 500-kB-Warnschwelle — kein Fehler, aber offen
+- `npm ci` + `npm run build`: **läuft durch**, Exit 0, 12,4 s (Stand nach dem `lucide-react`-Fix).
+  Ein Vite-Hinweis bleibt: der JS-Chunk ist 500,3 kB und liegt an der 500-kB-Warnschwelle —
+  kein Fehler, aber offen
+- Abhängigkeiten: alle **15 externen Imports** sind in der `package.json` deklariert **und**
+  liegen nach `npm ci` im Projekt-`node_modules`. Getrennt geprüft, weil ein bestandener
+  lokaler Build dafür kein Beleg ist (siehe Baustellen)
 - `dist/`: **48 MB**, 110 Dateien, größte Datei 19,6 MiB (`Turm_Prozess.mp4`). Keine Datei über
   dem 25-MiB-Limit von Cloudflare Pages
 - Videos: alle 10 in **Chromium** geprüft — `readyState` 4, laufende `currentTime`, keine
