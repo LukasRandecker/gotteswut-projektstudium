@@ -27,8 +27,8 @@ You have to use .webp with images beacuase auto compress to .webp if builded eve
         { type: "image", src: "../../images/Green.webp", aspect: "portrait" },
         { type: "image", src: "../../images/Red.webp", aspect: "landscape" },
 
-        { type: "video", src: "../../images/Intro.mov", aspect: "portrait" },
-        { type: "video", src: "../../images/Intro.mov", aspect: "landscape" },
+        { type: "video", src: "../../images/Intro.mp4", aspect: "portrait" },
+        { type: "video", src: "../../images/Intro.mp4", aspect: "landscape" },
       ],
     },
     {
@@ -322,8 +322,8 @@ export const Subpages_content = {
           ]
         },
       media: [
-        { type: "video", src: "../../images/SP_Design_Animation/Vulkan.mov", aspect: "landscape" },
-        { type: "video", src: "../../images/SP_Design_Animation/Intro.mov", aspect: "landscape" },
+        { type: "video", src: "../../images/SP_Design_Animation/Vulkan.mp4", aspect: "landscape" },
+        { type: "video", src: "../../images/SP_Design_Animation/Intro.mp4", aspect: "landscape" },
         { type: "video", src: "../../images/SP_Design_Animation/Winter.mp4", aspect: "landscape" },
       ],
     },
@@ -385,8 +385,8 @@ export const Subpages_content = {
           ]
         },
       media: [
-        { type: "video", src: "../../images/SP_Character/Blender_Flut.mkv", aspect: "landscape" },
-        { type: "video", src: "../../images/SP_Character/Blender_Winter.mkv", aspect: "landscape" },
+        { type: "video", src: "../../images/SP_Character/Blender_Flut.mp4", aspect: "landscape" },
+        { type: "video", src: "../../images/SP_Character/Blender_Winter.mp4", aspect: "landscape" },
       ],
     },
     {
@@ -504,7 +504,7 @@ export const Subpages_content = {
         { type: "image", src: "../../images/SP_Prototyp/Prototyp_v1_1.webp", aspect: "portrait" },
         { type: "image", src: "../../images/SP_Prototyp/Prototyp_v1_5.webp", aspect: "portrait" },
         { type: "image", src: "../../images/SP_Prototyp/Prototyp_v1_4.webp", aspect: "portrait" },
-        { type: "video", src: "../../images/SP_Prototyp/Prototyp_v1_6.mov", aspect: "portrait" },
+        { type: "video", src: "../../images/SP_Prototyp/Prototyp_v1_6.mp4", aspect: "portrait" },
       ],
     },
     {

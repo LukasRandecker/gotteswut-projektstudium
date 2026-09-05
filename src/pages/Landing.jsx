@@ -6,7 +6,6 @@ import ScrollSectionVideo from '../components/ScrollSectionVideo.jsx';
 
 
 import testImg from '../assets/Background.jpg';
-import introVideo from '../assets/Intro.mov';
 
 
 const sections = [
@@ -20,7 +19,7 @@ const sections = [
       image: "../../images/Landing/Story.webp"
     }, 
     {
-        video: introVideo
+        video: "../../images/Intro.mp4"
     },
     {
       title: "Spielbrett",
